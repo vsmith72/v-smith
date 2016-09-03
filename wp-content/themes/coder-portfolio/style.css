@@ -114,7 +114,7 @@ a:active {
 	background-size: cover;
 	background-image: url('http://vanessa-smith.com/codecamp/images/header.png');
 	background-attachment: fixed;
-	color: #fff;
+	color: red;
 }
 
 /* Nav Brand */
