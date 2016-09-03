@@ -22,7 +22,7 @@ add_action( 'after_setup_theme', 'custom_theme_features' );
 /************************************************************************
     scripts and styles - enque scripts and styles
 ************************************************************************/
-function vs_add_scripts()
+function coder_add_scripts()
 {
     // Deregister the included library
     wp_deregister_script( 'jquery' );
@@ -36,5 +36,16 @@ function vs_add_scripts()
     wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array( 'jquery' ), true );
     wp_enqueue_script( 'bootstrap-js' );
 }
-add_action( 'wp_enqueue_scripts', 'vs_add_scripts' );
+add_action( 'wp_enqueue_scripts', 'coder_add_scripts' );
 
+// Load the theme stylesheets
+function coder_theme_styles()
+{
+  // Load all of the styles that need to appear on all pages
+
+  wp_enqueue_style('bootstrap-min', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+  wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+  wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+
+}
+add_action('wp_enqueue_scripts', 'coder_theme_styles');
