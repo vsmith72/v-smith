@@ -12,79 +12,101 @@
  * @subpackage coder-portfolio
  */
 get_header(); ?>
-<div class="bg-image">
+<div class="bg-image" id="bg-image">
 	<header id="page-header">
-		<h1>&lt;i'm a coder&gt;<span class="blink">|</span></h1>
+      <p class="type anim-typewriter">&lt;i'm a coder&gt;</p>
 	</header>
 </div>
+<!-- about me ============================================================= -->
 <div id="about" class="scroll">
-	<div class="container-fluid">
-		<h2>&lt;about me&gt;<span class="blink">|</span></h2>
-		<div class="row center">
-			<div class="col-sm-4">
-				<div class="right">
-					<img src="http://vanessa-smith.com/codecamp/images/me.jpg" alt="Vanessa Smith - Front End Web Developer" class="shadow" style="width:100%;"><br /><br />
-				</div>
-			</div>
-			<div class="col-sm-8">
-				<p>Vanessa Smith is a Front End Web Developer specilaizing in Wordpress Development. Using a combination of formal schooling and self-learning she has been designing and building Websites and Web Apps for over 10 years and has been working with Wordpress for the last four years. She is currently working to earn her Full Stack Web Development certificate online from <a href="https://freecodecamp.com" target="_blank">FreeCodeCamp</a>.</p>
-				<p>Vanessa lives and works in Seattle, Washington. If you'd like to hire her please <a href="#contact">contact</a> her below. When she is not <span class="code">&lt;coding&gt;</span> Vanessa enjoys traveling the world, photography and making pretty things.</p>
+ <div class="container-fluid">
+  <?php query_posts('pagename=about-me'); ?>
+    <?php while ( have_posts() ) : the_post();
 
-                <div class="skills">
-                    <h3>&lt;skills&gt;</h3>
-                    <h4>HTML - including HTML 5</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active teal" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
-                            <span>99.9%</span>
-                        </div>
-                    </div>
-                    <h4>CSS - including CSS3 and Bootstrap</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-                            <span>85%</span>
-                        </div>
-                    </div>
-                    <h4>Wordpress - including PHP</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active teal" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                    <h4>UI &amp; UX - including Adobe Photoshop and Illustrator</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active teal" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                    <h4>JavaScript &amp; jQuery</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active teal" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                            <span>60%</span>
-                        </div>
-                    </div>
-                    <p class="footnote">Vanessa's skill set will continue to grow. "Once you stop learning you start dying," -Albert Einstein</p>
-                </div>
-            </div>
+      //set up variables for about me and skills
+      $about_the_code = get_field('about_the_code');
+      $about_the_person = get_field('about_the_person');
+      $skill_image_1 = get_field('skill_image_1');
+      $skill_image_2 = get_field('skill_image_2');
+      $skill_image_3 = get_field('skill_image_3');
+      $skill_image_4 = get_field('skill_image_4');
+      $skill_1 = get_field('skill_1');
+      $skill_2 = get_field('skill_2');
+      $skill_3 = get_field('skill_3');
+      $skill_4 = get_field('skill_4');
+      $skill_1_title = get_field('skill_1_title');
+      $skill_2_title = get_field('skill_2_title');
+      $skill_3_title = get_field('skill_3_title');
+
+    ?>
+    <! -- get the modal template part -->
+    <?php get_template_part('content-modal'); ?>
+    <h2>&lt;about me&gt;<span class="blink">|</span></h2>
+
+    <!-- Shape Experiment -->
+    <div class="about-content">
+      <div class="shape"></div>
+        <p><?php echo $about_the_code; ?></p>
+        <p class="footnote">"Once you stop learning you start dying," -Albert Einstein</p>
+        <p><?php echo $about_the_person; ?></p>
+        <p class="footnote clearfix">"Not all who wander are lost" -JRR Tolken</p>
+
+        <div class="skills">
+          <h4>&lt;<?php echo $skill_1_title; ?>&gt;</h4>
+          <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_1; ?></span></div>
+            <p class="clearfix"><?php echo $skill_1; ?></p>
+
+          <h4>&lt;<?php echo $skill_2_title; ?>&gt;</h4>
+          <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_2; ?></span></div>
+          <p class="clearfix"><?php echo $skill_2; ?></p>
+
+          <h4>&lt;<?php echo $skill_3_title; ?>&gt;</h4>
+          <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_3; ?></span></div>
+            <p class="clearfix"><?php echo $skill_3; ?></p>
         </div>
-	</div>
+      <?php endwhile; wp_reset_query(); ?>
+    </div>
+  </div>
 </div><!-- end about -->
+
 <div id="portfolio" class="scroll">
-	<div class="container-fluid">
+	<div class="container">
 		<h2>&lt;portfolio&gt;<span class="blink">|</span></h2>
-		<div class="row center">
-			<div class="col-sm-4">
-				<a href="http://codepen.io/vsmith72/pen/YWzWex" target="_blank"><img src="http://vanessa-smith.com/codecamp/images/stevejobstribute.png" alt="Portfolio piece - Steve Jobs Trubute Page" style="width:100%;"  class="shadow filter"></a>
-				<p class="footnote-white">Skills Used: HTML, CSS, Javascript &amp; jQuery, UI/UX</p>
-			</div>
-			<div class="col-sm-4">
-				<a href="http://codepen.io/vsmith72/pen/BzaLjb" target="_blank"><img src="http://vanessa-smith.com/codecamp/images/portfolio.png" alt="Portfolio piece - Web Developer Portfolio" style="width:100%;"  class="shadow filter"></a>
-				<p class="footnote-white">Skills Used: HTML, CSS, Javascript &amp; jQuery, UI/UX</p>
-			</div>
-			<div class="col-sm-4">
-				<a href="http://wandrrblog.com" target="_blank"><img src="http://vanessa-smith.com/codecamp/images/wandrrblog.png" alt="Portfolio piece - Wandrrblog a personal blog using Wordpress" style="width:100%;" class="shadow filter"></a>
-				<p class="footnote-white">Skills Used: Custom Wordpress Template, CSS, HTML, UI/UX</p>
-			</div>
-		</div>
+      <ul class="flex">
+          <?php query_posts('post_type=portfolio'); ?>
+          <?php while ( have_posts() ) : the_post();
+
+            //set up variables for portfolio items
+            $project_title = get_field('project_title');
+            $project_url = get_field('project_url');
+            $project_description = get_field('project_description');
+            $skills_used = get_field('skills_used');
+
+            // image
+            $img = get_field('project_image');
+            //vars
+            $size = 'large';
+
+          ?>
+
+
+               <li class="portfolio-item">
+                 <a href="<?php echo $project_url; ?>" target="_blank">
+                   <?php if( $img ): ?>
+
+                   <img class="shadow filter" src="<?php echo $img; ?>" width="100%" />
+
+                   <?php endif; ?>
+                   </a>
+                <br/>
+                <p class="footnote-white">Skills Used: <?php echo $skills_used; ?></p>
+                </li>
+
+
+
+
+      <?php endwhile; wp_reset_query(); ?>
+      </ul>
 	</div>
 </div><!-- end portfolio -->
 <div id="contact" class="scroll">

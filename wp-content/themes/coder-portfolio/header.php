@@ -8,6 +8,7 @@
     </head>
     <body>
         <div class="wrapper">
+        <!-- TODO -- Make the nav bar a dynamic wp navbar must be responsive -->
 		  <nav class="navbar navbar-inverse navbar-fixed-top">
               <div class="container-fluid">
 				    <div class="navbar-header scroll">
@@ -26,7 +27,7 @@
                             <li><a href="#contact">&lt;contact&gt;</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="https://codepen.io/vsmith72/" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+                            <li><a href="https://codepen.io/vsmith72" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
                             <li><a href="https://github.com/vsmith72" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/vsmith1972" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         </ul>

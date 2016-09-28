@@ -1,0 +1,397 @@
+/*!
+
+Theme Name: New Portfolio
+
+Theme URI: http://www.vanessa-smith.com
+
+Description: New Portfolio theme that is completely compatible with WordPress 4.0
+
+Author: Vanessa Smith
+
+Author URI: http://www.vanessa-smith.com
+
+Version: 2.0
+
+Description: Responsive theme using gird layout for post loop.
+
+Tags: responsive, full-width, bootstrap, jquery.
+
+*/
+
+
+/* Google Fonts ================================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Antic|Questrial|Share+Tech+Mono');
+
+/* GLOBAL ===================================== */
+
+@import 'css/variables';
+
+html {
+  font-size: 16px;
+  line-height: 1;
+}
+body {
+  width: 100%;
+  font-size: 100%;
+}
+
+ul {list-style: none;}
+
+/* headings  and paragraphs*/
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: lowercase;
+}
+h5, h6, p{
+  font-family: 'Questrial', sans serif;
+}
+h1,h2,h3,h4,h5,h6,p {
+  line-height: 1.45;
+}
+
+h1 {
+  display: inline;}
+
+h4, p {
+  color: #777;
+}
+p {
+  text-align: justify;
+}
+
+/* hyperlinks */
+a:link {
+  color: $primary-color;
+}
+a:visited {
+  color: $primary-color;
+}
+a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+a:active {
+  color: blue;
+}
+li {
+  list-style: none;
+}
+
+
+/* Nav Brand ===========================================================*/
+.navbar {
+  font-family: Share Tech Mono, monospace;
+}
+
+
+.me {
+
+  color: $primary-color !important;
+}
+
+/* HERO AREA ============================================================*/
+.bg-image {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url('http://vanessa-smith.com/codecamp/images/header.png');
+  background-attachment: fixed;
+  color: $accent-white;
+}
+
+.type{
+  width: 13ch;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  color: $accent-white;
+  font-size: 2em;
+  font-family: 'share tech mono', monospace;
+}
+@media (min-width: 768px) {
+  .type {
+    font-size: 5em;
+  }
+}
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(13) 1s 1 normal both,
+    blinkTextCursor 500ms steps(13) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 13ch;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+/* ABOUT ============================================================ */
+
+#about {
+  min-height: 100vh;
+  padding-top: 2.5em;
+  background: $accent-white;
+  color: $primary-color;
+}
+
+.about-content{
+  margin: 0 5% 0 5%;
+}
+.shape{
+  shape-outside: circle(50%);
+  background-image: url('img/me-square.jpg');
+  background-size: contain;
+  border-radius: 50%;
+  border: 2px inset rgba(0, 0, 0, .2);
+  float: left;
+  height: 150px;
+  width: 150px;
+  margin: .75em;
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+}
+@media (min-width: 768px) {
+  .shape{
+    shape-outside: circle(50%);
+    background-image: url('img/me-square.jpg');
+    border-radius: 50%;
+    border: 2px inset rgba(0, 0, 0, .2);
+    float: left;
+    height: 250px;
+    width: 250px;
+    margin: .75em;
+    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+  }
+}
+@media (min-width: 1024px) {
+  .shape{
+    shape-outside: circle(50%);
+    background-image: url('img/me-square.jpg');
+    border-radius: 50%;
+    border: 2px inset rgba(0, 0, 0, .2);
+    float: left;
+    height: 300px;
+    width: 300px;
+    margin: .75em;
+    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+  }
+}
+.shape:after{
+  clear: both;
+}
+
+/* Skills */
+
+.skills {
+  margin: auto;
+  width: 80%;
+  padding-bottom: 2%;
+}
+
+.shape-skill {
+  shape-outside: circle(50%);
+  border-radius: 50%;
+  float: left;
+  height: 80px;
+  width: 80px;
+  margin: .5em;
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+}
+.skill-logo {
+  display: inline-block;
+  background-color: $accent-white;
+  border-radius: 50%;
+  width: 80px;
+  margin: auto;
+}
+
+.skill-logo .fa {
+  padding: 20px;
+  color: $primary-color;
+  height: 80px;
+  width: 80px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 2em;
+  margin: auto;
+}
+
+.skills h4 {
+  color: $primary-color;
+  margin: 0;
+}
+
+/* Portfolio ====================================================*/
+#portfolio {
+  min-height: 100vh;
+  padding-top: 2.5em;
+  background: $primary-color;
+  color: $accent-white;
+}
+
+ul.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+li.portfolio-item {
+  width: 95%;
+  display: inline-block;
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  ul.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  li.portfolio-item {
+    width: 45%;
+    display: inline-block;
+    padding-bottom: 2%;
+    text-align: center;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  ul.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  li.portfolio-item {
+    width: 30%;
+    display: inline-block;
+    padding-bottom: 2%;
+    text-align: center;
+  }
+
+}
+
+/* box shadow for image*/
+.shadow {
+  border-radius: 0.25em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* filter for portfolio images */
+.filter{
+  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+}
+.filter:hover{
+  -webkit-filter: none; /* Chrome, Safari, Opera */
+  filter: none;
+}
+/* CONTACT ================================================*/
+#contact {
+  height: 100vh;
+  padding-top: 2.5em;
+  background:$accent-white;
+  color:$primary-color;
+}
+
+/* contact form */
+label {
+  font-size: 1.75rem;
+}
+@media screen and (max-width: 1024px){
+  label {
+    font-size: 1.5rem;
+  }
+}
+button {
+  padding: 1.5em 0;
+  background-color: $primary-color;
+  color: $accent-white;
+
+}
+button:hover {
+  background-color: rgba(106,197,176,0.9);
+  color: #eee !important;
+}
+input:focus {
+  background-color: rgba(106,197,176,0.6);
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: $accent-white;
+}
+textarea:focus {
+  background-color: rgba(106,197,176,0.6);
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: $accent-white;
+}
+
+
+/* FOOTER ====================================================*/
+#footer p{
+  padding: 0.25em;
+  margin-bottom: 0;
+  border: none;
+  background-color: $accent-black;
+  color: #999;
+  font-family: Share Tech Mono, monospace;
+  text-align: center;
+}
+
+
+/* useful multi purpose classes ===================================*/
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+.right{
+  text-align: right;
+
+}
+.center{
+  width: 90%;
+  margin: 0.25% auto;
+}
+.center-2 {
+  width: 80%;
+}
+
+.footnote {
+  font-style: italic;
+  color: $primary-color;
+}
+.footnote-white {
+  padding-top: 2%;
+  color: $accent-white;
+  font-style: italic;
+  text-align: center;
+}
+.round{
+  border-radius: 50%;
+}
+
