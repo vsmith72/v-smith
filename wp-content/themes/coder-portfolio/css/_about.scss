@@ -1,0 +1,94 @@
+
+#about {
+  min-height: 100vh;
+  padding-top: 2.5em;
+  background: $accent-white;
+  color: $primary-color;
+}
+
+.about-content{
+  margin: 0 5% 0 5%;
+}
+.shape{
+  shape-outside: circle(50%);
+  background-image: url('img/me-square.jpg');
+  background-size: contain;
+  border-radius: 50%;
+  border: 2px inset rgba(0, 0, 0, .2);
+  float: left;
+  height: 150px;
+  width: 150px;
+  margin: .75em;
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+}
+@media (min-width: 768px) {
+  .shape{
+    shape-outside: circle(50%);
+    background-image: url('img/me-square.jpg');
+    border-radius: 50%;
+    border: 2px inset rgba(0, 0, 0, .2);
+    float: left;
+    height: 250px;
+    width: 250px;
+    margin: .75em;
+    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+  }
+}
+@media (min-width: 1024px) {
+  .shape{
+    shape-outside: circle(50%);
+    background-image: url('img/me-square.jpg');
+    border-radius: 50%;
+    border: 2px inset rgba(0, 0, 0, .2);
+    float: left;
+    height: 300px;
+    width: 300px;
+    margin: .75em;
+    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+  }
+}
+.shape:after{
+  clear: both;
+}
+
+/* Skills */
+
+.skills {
+  margin: auto;
+  width: 80%;
+  padding-bottom: 2%;
+}
+
+.shape-skill {
+  shape-outside: circle(50%);
+  border-radius: 50%;
+  float: left;
+  height: 80px;
+  width: 80px;
+  margin: .5em;
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+}
+.skill-logo {
+  display: inline-block;
+  background-color: $accent-white;
+  border-radius: 50%;
+  width: 80px;
+  margin: auto;
+}
+
+.skill-logo .fa {
+  padding: 20px;
+  color: $primary-color;
+  height: 80px;
+  width: 80px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 2em;
+  margin: auto;
+}
+
+.skills h4 {
+  color: $primary-color;
+  margin: 0;
+}

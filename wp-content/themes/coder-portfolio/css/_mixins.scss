@@ -1,0 +1,39 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+.right{
+  text-align: right;
+
+}
+.center{
+  width: 90%;
+  margin: 0.25% auto;
+}
+.center-2 {
+  width: 80%;
+}
+
+.footnote {
+  font-style: italic;
+  color: $primary-color;
+}
+.footnote-white {
+  padding-top: 2%;
+  color: $accent-white;
+  font-style: italic;
+  text-align: center;
+}
+.round{
+  border-radius: 50%;
+}
