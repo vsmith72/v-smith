@@ -11,6 +11,7 @@
  * @package WordPress
  * @subpackage coder-portfolio
  */
+
 get_header(); ?>
 <div class="bg-image" id="bg-image">
 	<header id="page-header">
@@ -46,22 +47,25 @@ get_header(); ?>
     <!-- Shape Experiment -->
     <div class="about-content">
       <div class="shape"></div>
+        <h3>Hi, my name is Vanessa, and I am a coder!</h3>
         <p><?php echo $about_the_code; ?></p>
         <p class="footnote">"Once you stop learning you start dying," -Albert Einstein</p>
         <p><?php echo $about_the_person; ?></p>
         <p class="footnote clearfix">"Not all who wander are lost" -JRR Tolken</p>
 
         <div class="skills">
-          <h4>&lt;<?php echo $skill_1_title; ?>&gt;</h4>
+          <header class="skills-header clearfix"><h3>My Skillset and How I Roll!</h3></header>
+
           <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_1; ?></span></div>
+            <h4>&lt;<?php echo $skill_1_title; ?>&gt;</h4>
             <p class="clearfix"><?php echo $skill_1; ?></p>
 
-          <h4>&lt;<?php echo $skill_2_title; ?>&gt;</h4>
           <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_2; ?></span></div>
-          <p class="clearfix"><?php echo $skill_2; ?></p>
+            <h4>&lt;<?php echo $skill_2_title; ?>&gt;</h4>
+            <p class="clearfix"><?php echo $skill_2; ?></p>
 
-          <h4>&lt;<?php echo $skill_3_title; ?>&gt;</h4>
           <div class="shape-skill"><span class="skill-logo"><?php echo $skill_image_3; ?></span></div>
+            <h4>&lt;<?php echo $skill_3_title; ?>&gt;</h4>
             <p class="clearfix"><?php echo $skill_3; ?></p>
         </div>
       <?php endwhile; wp_reset_query(); ?>
@@ -70,7 +74,7 @@ get_header(); ?>
 </div><!-- end about -->
 
 <div id="portfolio" class="scroll">
-	<div class="container">
+	<div class="container-fluid">
 		<h2>&lt;portfolio&gt;<span class="blink">|</span></h2>
       <ul class="flex">
           <?php query_posts('post_type=portfolio'); ?>
@@ -94,7 +98,7 @@ get_header(); ?>
                  <a href="<?php echo $project_url; ?>" target="_blank">
                    <?php if( $img ): ?>
 
-                   <img class="shadow filter" src="<?php echo $img; ?>" width="100%" />
+                   <img class="portfolio-img" src="<?php echo $img; ?>" width="100%" />
 
                    <?php endif; ?>
                    </a>
@@ -112,8 +116,7 @@ get_header(); ?>
 <div id="contact" class="scroll">
 	<div class="container-fluid">
 		<h2>&lt;contact&gt;<span class="blink">|</span></h2>
-		<div class="row center center-2">
-			<div class="col-sm-12">
+		<div class="center">
 				<p>Contact Vanessa below, whether you want to hire her, inquire about her experience, or simply invite her to lunch (No, seriously. Invite her to lunch!)</p>
 				<form action="http://vanessa-smith.com/codecamp/contact.php" name="contactform" method="post" role="form">
 					<div class="form-group">
@@ -130,7 +133,6 @@ get_header(); ?>
 					</div>
 					<button type="submit" class="btn btn-block"><i class="fa fa-envelope-o fa-x5" aria-hidden="true"></i>&nbsp; &nbsp;Send Your Message</button>
 				</form>
-			</div>
 		</div>
 	</div>
 </div><!-- end contact -->
