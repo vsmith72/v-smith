@@ -13,12 +13,15 @@
  */
 
 get_header(); ?>
+
+<! -- HERO AREA -------------------------------------------------------------->
 <div class="bg-image" id="bg-image">
 	<header id="page-header">
       <p class="type anim-typewriter">&lt;i'm a coder&gt;</p>
 	</header>
 </div>
-<!-- about me ============================================================= -->
+
+<!-- ABOUT ME ---------------------------------------------------------------->
 <div id="about" class="scroll">
  <div class="container-fluid">
   <?php query_posts('pagename=about-me'); ?>
@@ -46,7 +49,7 @@ get_header(); ?>
 
     <!-- Shape Experiment -->
     <div class="about-content">
-      <div class="shape"></div>
+      <div class="shape-about"></div>
         <h3>Hi, my name is Vanessa, and I am a coder!</h3>
         <p><?php echo $about_the_code; ?></p>
         <p class="footnote">"Once you stop learning you start dying," -Albert Einstein</p>
@@ -105,9 +108,6 @@ get_header(); ?>
                 <br/>
                 <p class="footnote-white">Skills Used: <?php echo $skills_used; ?></p>
                 </li>
-
-
-
 
       <?php endwhile; wp_reset_query(); ?>
       </ul>

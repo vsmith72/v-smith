@@ -18,93 +18,53 @@ Tags: responsive, full-width, bootstrap, jquery.
 
 */
 
+/*! ==========================================================================\
+                                IMPORTS
+\============================================================================*/
 
-/* Google Fonts ================================================*/
+/* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Antic|Questrial|Share+Tech+Mono');
 
-/* Partials  =====================================
+/*! ==========================================================================\
+                                VARIABLES
+\============================================================================*/
 
-@import 'css/variables';
-@import 'css/mixins';
-@import 'css/elements';
-@import 'css/nav';
-@import 'css/hero';
-@import 'css/about';
-@import 'css/portfolio';
-@import 'css/contact';
-@import 'css/footer';
-
-*/
-
-/* COLORS ====================================*/
+/* COLORS */
 $primary-color: #6ac5b0;
 $secondary-color: #ff9999;
 $accent-light: #fff;
 $accent-dark: #000;
+$color-text: #777;
 
-/* FONTS ======================================*/
+/* FONTS */
 $base-font: 'Questrial', sans serif;
 $heading-font: 'Share Tech Mono', monospace;
 
-$shadow-circle: -2px 5px 20px 0 rgba(0, 0, 0,.5);
+/* FONT SIZES */
+$font-size-xs: 11px;
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 36px;
 
-html {
-  font-size: 16px;
-  line-height: 1;
-}
-body {
-  width: 100%;
-  font-size: 100%;
-}
+/*! ==========================================================================\
+                                MIXINS
+\============================================================================*/
 
-ul {list-style: none;}
-
-/* headings  and paragraphs*/
-h1,
-h2,
-h3,
-h4 {
-  font-family: $heading-font;
-  text-transform: lowercase;
-}
-h5, h6, p{
-  font-family: $base-font;
-}
-h1,h2,h3,h4,h5,h6,p {
-  line-height: 1.45;
+/* FONTS */
+@mixin font-size($px, $base: 16px) { // 16px is the browser default
+  font-size: $px; // px fallback
+  font-size: ($px / $base) * 1rem; // calculate rem font-size
 }
 
-h1 {
-  display: inline;}
-
-h4, p {
-  color: #777;
+/* box shadow for circle shapes */
+@mixin shadow-circle {
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0,.5);
 }
-p {
-  text-align: justify;
-}
-
-/* hyperlinks */
-a:link {
-  color: $primary-color;
-}
-a:visited {
-  color: $primary-color;
-}
-a:hover {
-  color: #ccc;
-  text-decoration: none;
-}
-a:active {
-  color: blue;
-}
-li {
-  list-style: none;
-}
-
-/* box shadow for image*/
-@mixin shadow {
+/* box shadow for portfolio images */
+@mixin shadow-img {
   border-radius: 0.25em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -118,6 +78,84 @@ li {
   filter: none;
 }
 
+
+/*! ==========================================================================\
+                                ELEMENTS
+\============================================================================*/
+
+html{ // Smallest resolutions
+  font-size: .8rem;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 480px) { // 480px and up
+  html{
+    font-size: .9rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html{
+    font-size: 1rem;
+  }
+}
+
+body {
+  width: 100%;
+  line-height: 1.45;
+}
+
+/* HEADING AND PARAGRAPHS*/
+h1,
+h2,
+h3,
+h4 {
+  font-family: $heading-font;
+  text-transform: lowercase;
+}
+
+p {
+  @include font-size($font-size-l);
+  font-family: $base-font;
+  color: $color-text;
+  text-align: justify;
+}
+
+/* LINKS */
+a {
+  font-weight: 600;
+  color: $secondary-color;
+}
+a:visited {
+  color: $primary-color;
+}
+a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+a:active {
+  color: $secondary-color;
+}
+
+/* LISTS */
+
+ul {
+  list-style-type: none;
+}
+
+/* SELECTION */
+::selection {
+  background: $secondary-color;
+  color:#FFF;
+  text-shadow:none;
+}
+::-moz-selection {
+  background: $secondary-color;
+  color:#FFF;
+  text-shadow:none;
+}
+
+/* UTILITY CLASSES */
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -132,16 +170,10 @@ li {
   zoom: 1; /* ie 6/7 */
 }
 
-.right{
-  text-align: right;
-
-}
 .center{
   width: 90%;
   margin: 0.25% auto;
 }
-.center-2 {
-
 
 .footnote {
   font-style: italic;
@@ -153,18 +185,17 @@ li {
   font-style: italic;
   text-align: center;
 }
-.round{
-  border-radius: 50%;
-}
+
+/* NAVIGATION ===============================================================*/
 .navbar {
   font-family: $heading-font;
 }
 
-
 .me {
-
   color: $primary-color !important;
 }
+
+/* HERO AREA ================================================================*/
 .bg-image {
   width: 100%;
   display: flex;
@@ -207,6 +238,7 @@ li {
   to{border-right-color: transparent;}
 }
 
+/* ABOUT ====================================================================*/
 #about {
   min-height: 100vh;
   padding-top: 2.5em;
@@ -215,51 +247,35 @@ li {
 }
 
 .about-content{
-  margin: 0 5% 0 5%;
+  margin: 0 5%;
 }
-.shape{
+.shape-about{
+  @include shadow-circle;
   shape-outside: circle(50%);
   background-image: url('img/me-square.jpg');
   background-size: contain;
   border-radius: 50%;
-  border: 2px inset rgba(0, 0, 0, .2);
+  border: 2px inset rgba($accent-dark, .2);
   float: left;
   height: 150px;
   width: 150px;
   margin: .75em;
-  box-shadow: $shadow-circle;
 }
 @media (min-width: 768px) {
-  .shape{
-    shape-outside: circle(50%);
-    background-image: url('img/me-square.jpg');
-    border-radius: 50%;
-    border: 2px inset rgba(0, 0, 0, .2);
-    float: left;
+  .shape-about{
     height: 250px;
     width: 250px;
-    margin: .75em;
-    box-shadow: $shadow-circle;
   }
 }
 @media (min-width: 1024px) {
-  .shape{
-    shape-outside: circle(50%);
-    background-image: url('img/me-square.jpg');
-    border-radius: 50%;
-    border: 2px inset rgba(0, 0, 0, .2);
-    float: left;
+  .shape-about{
     height: 300px;
     width: 300px;
-    margin: .75em;
-    box-shadow: $shadow-circle;
   }
 }
-.shape:after{
-  clear: both;
-}
 
-/* Skills */
+
+/* SKILLS ===================================================================*/
 
 .skills {
   margin: auto;
@@ -269,13 +285,13 @@ li {
 
 
 .shape-skill {
+  @include shadow-circle;
   shape-outside: circle(50%);
   border-radius: 50%;
   float: left;
   height: 80px;
   width: 80px;
   margin: .5em;
-  box-shadow: $shadow-circle;
 }
 .skill-logo {
   display: inline-block;
@@ -298,9 +314,58 @@ li {
 }
 
 .skills h4 {
-  color: $primary-color;
   margin: 0;
 }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  font-family: $base-font;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($accent-dark, .8);
+
+}
+.modal:target {
+  display: block;
+}
+.modal-content {
+  width: 70%;
+  max-width: 700px;
+  position: relative;
+  margin: 10% auto;
+  border-radius: none;
+  background: $accent-light;
+}
+.modal-body {
+  padding: 2%;
+  img {
+  width: 100%;
+    text-align: center;
+  }
+}
+.modal-title {
+  padding: 0 2%;
+  h4, button{
+  display: inline;
+  }
+  button {
+    text-transform: lowercase;
+    font-size: 1rem;
+    padding-top: 1%;
+    background: none;
+    color: $primary-color;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* PORTFOLIO ================================================================*/
+
 #portfolio {
   min-height: 100vh;
   padding-top: 2.5em;
@@ -322,7 +387,7 @@ li.portfolio-item {
 }
 
 .portfolio-img {
-  @include shadow;
+  @include shadow-img;
   @include filter-on;
   &:hover{
     @include filter-off;
@@ -359,7 +424,6 @@ li.portfolio-item {
     padding-bottom: 2%;
     text-align: center;
   }
-
 }
 
 #contact {
@@ -369,9 +433,11 @@ li.portfolio-item {
   color:$primary-color;
 }
 
-/* contact form */
+/* CONTACT ==================================================================*/
 label {
   font-size: 1.75rem;
+  font-family: $heading-font;
+  text-transform: lowercase;
 }
 @media screen and (max-width: 1024px){
   label {
@@ -382,32 +448,33 @@ button {
   padding: 1.5em 0;
   background-color: $primary-color;
   color: $accent-light;
-
+  text-transform: uppercase;
 }
 button:hover {
-  background-color: rgba(106,197,176,0.9);
+  background-color: rgba($primary-color,0.9);
   color: #eee !important;
 }
 input:focus {
-  background-color: rgba(106,197,176,0.6);
+  background-color: rgba($primary-color,0.6);
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
   color: $accent-light;
 }
 textarea:focus {
-  background-color: rgba(106,197,176,0.6);
+  background-color: rgba($primary-color,0.6);
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
   color: $accent-light;
 }
-#footer p{
-  padding: 0.25em;
-  margin-bottom: 0;
-  border: none;
-  background-color: $accent-dark;
-  color: #999;
-  font-family: $heading-font;
-  text-align: center;
-}
+  #footer p {
+    padding: 0.25em;
+    margin-bottom: 0;
+    border: none;
+    background-color: $accent-dark;
+    color: #999;
+    font-family: $heading-font;
+    text-align: center;
+  }
+

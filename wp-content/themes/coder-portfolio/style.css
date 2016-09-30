@@ -17,39 +17,45 @@ Description: Responsive theme using gird layout for post loop.
 Tags: responsive, full-width, bootstrap, jquery.
 
 */
-/* Google Fonts ================================================*/
+/*! ==========================================================================                                IMPORTS
+\============================================================================*/
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Antic|Questrial|Share+Tech+Mono");
-/* Partials  =====================================
-
-@import 'css/variables';
-@import 'css/mixins';
-@import 'css/elements';
-@import 'css/nav';
-@import 'css/hero';
-@import 'css/about';
-@import 'css/portfolio';
-@import 'css/contact';
-@import 'css/footer';
-
-*/
-/* COLORS ====================================*/
-/* FONTS ======================================*/
-/* line 50, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/*! ==========================================================================                                VARIABLES
+\============================================================================*/
+/* COLORS */
+/* FONTS */
+/* FONT SIZES */
+/*! ==========================================================================                                MIXINS
+\============================================================================*/
+/* FONTS */
+/* box shadow for circle shapes */
+/* box shadow for portfolio images */
+/* filter for portfolio images */
+/*! ==========================================================================                                ELEMENTS
+\============================================================================*/
+/* line 86, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 html {
-  font-size: 16px;
+  font-size: .8rem;
   line-height: 1; }
 
-/* line 54, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+@media only screen and (min-width: 480px) {
+  /* line 92, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  html {
+    font-size: .9rem; } }
+
+@media only screen and (min-width: 768px) {
+  /* line 98, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  html {
+    font-size: 1rem; } }
+
+/* line 103, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 body {
   width: 100%;
-  font-size: 100%; }
+  line-height: 1.45; }
 
-/* line 59, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-ul {
-  list-style: none; }
-
-/* headings  and paragraphs*/
-/* line 65, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* HEADING AND PARAGRAPHS*/
+/* line 112, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 h1,
 h2,
 h3,
@@ -57,103 +63,95 @@ h4 {
   font-family: "Share Tech Mono", monospace;
   text-transform: lowercase; }
 
-/* line 69, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-h5, h6, p {
-  font-family: "Questrial", sans serif; }
-
-/* line 72, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-h1, h2, h3, h4, h5, h6, p {
-  line-height: 1.45; }
-
-/* line 76, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-h1 {
-  display: inline; }
-
-/* line 79, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-h4, p {
-  color: #777; }
-
-/* line 82, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 117, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 p {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Questrial", sans serif;
+  color: #777;
   text-align: justify; }
 
-/* hyperlinks */
-/* line 87, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-a:link {
-  color: #6ac5b0; }
+/* LINKS */
+/* line 125, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+a {
+  font-weight: 600;
+  color: #ff9999; }
 
-/* line 90, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 129, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 a:visited {
   color: #6ac5b0; }
 
-/* line 93, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 132, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 a:hover {
   color: #ccc;
   text-decoration: none; }
 
-/* line 97, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 136, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 a:active {
-  color: blue; }
+  color: #ff9999; }
 
-/* line 100, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-li {
-  list-style: none; }
+/* LISTS */
+/* line 142, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+ul {
+  list-style-type: none; }
 
-/* box shadow for image*/
-/* filter for portfolio images */
-/* line 120, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* SELECTION */
+/* line 147, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+::selection {
+  background: #ff9999;
+  color: #FFF;
+  text-shadow: none; }
+
+/* line 152, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+::-moz-selection {
+  background: #ff9999;
+  color: #FFF;
+  text-shadow: none; }
+
+/* UTILITY CLASSES */
+/* line 160, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table; }
 
-/* line 125, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 165, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .clearfix:after {
   clear: both; }
 
-/* line 129, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 169, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .clearfix {
   zoom: 1;
   /* ie 6/7 */ }
 
-/* line 133, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-.right {
-  text-align: right; }
-
-/* line 137, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 173, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .center {
   width: 90%;
   margin: 0.25% auto; }
 
-/* line 141, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-.center-2 {
-  width: 80%; }
-
-/* line 145, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 178, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .footnote {
   font-style: italic;
   color: #6ac5b0; }
 
-/* line 149, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 182, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .footnote-white {
   padding-top: 2%;
   color: #fff;
   font-style: italic;
   text-align: center; }
 
-/* line 155, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-.round {
-  border-radius: 50%; }
-
-/* line 158, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* NAVIGATION ===============================================================*/
+/* line 190, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .navbar {
   font-family: "Share Tech Mono", monospace; }
 
-/* line 163, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 194, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .me {
   color: #6ac5b0 !important; }
 
-/* line 167, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* HERO AREA ================================================================*/
+/* line 199, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .bg-image {
   width: 100%;
   display: flex;
@@ -165,7 +163,7 @@ li {
   background-attachment: fixed;
   color: #fff; }
 
-/* line 179, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 211, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .type {
   width: 13ch;
   margin: 0 auto;
@@ -178,12 +176,12 @@ li {
   font-family: "Share Tech Mono", monospace; }
 
 @media (min-width: 768px) {
-  /* line 191, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 223, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   .type {
     font-size: 5em; } }
 
 /* Animation */
-/* line 196, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 228, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .anim-typewriter {
   animation: typewriter 4s steps(13) 1s 1 normal both, blinkTextCursor 500ms steps(13) infinite normal; }
 
@@ -199,19 +197,21 @@ li {
   to {
     border-right-color: transparent; } }
 
-/* line 209, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* ABOUT ====================================================================*/
+/* line 242, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 #about {
   min-height: 100vh;
   padding-top: 2.5em;
   background: #fff;
   color: #6ac5b0; }
 
-/* line 216, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 249, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .about-content {
-  margin: 0 5% 0 5%; }
+  margin: 0 5%; }
 
-/* line 219, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-.shape {
+/* line 252, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.shape-about {
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5);
   shape-outside: circle(50%);
   background-image: url("img/me-square.jpg");
   background-size: contain;
@@ -220,57 +220,38 @@ li {
   float: left;
   height: 150px;
   width: 150px;
-  margin: .75em;
-  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5); }
+  margin: .75em; }
 
 @media (min-width: 768px) {
-  /* line 232, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-  .shape {
-    shape-outside: circle(50%);
-    background-image: url("img/me-square.jpg");
-    border-radius: 50%;
-    border: 2px inset rgba(0, 0, 0, 0.2);
-    float: left;
+  /* line 265, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  .shape-about {
     height: 250px;
-    width: 250px;
-    margin: .75em;
-    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5); } }
+    width: 250px; } }
 
 @media (min-width: 1024px) {
-  /* line 245, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-  .shape {
-    shape-outside: circle(50%);
-    background-image: url("img/me-square.jpg");
-    border-radius: 50%;
-    border: 2px inset rgba(0, 0, 0, 0.2);
-    float: left;
+  /* line 271, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  .shape-about {
     height: 300px;
-    width: 300px;
-    margin: .75em;
-    box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5); } }
+    width: 300px; } }
 
-/* line 257, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
-.shape:after {
-  clear: both; }
-
-/* Skills */
-/* line 263, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* SKILLS ===================================================================*/
+/* line 280, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .skills {
   margin: auto;
   width: 80%;
   padding-bottom: 2%; }
 
-/* line 270, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 287, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .shape-skill {
+  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5);
   shape-outside: circle(50%);
   border-radius: 50%;
   float: left;
   height: 80px;
   width: 80px;
-  margin: .5em;
-  box-shadow: -2px 5px 20px 0 rgba(0, 0, 0, 0.5); }
+  margin: .5em; }
 
-/* line 279, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 296, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .skill-logo {
   display: inline-block;
   background-color: #fff;
@@ -278,7 +259,7 @@ li {
   width: 80px;
   margin: auto; }
 
-/* line 287, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 304, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .skill-logo .fa {
   padding: 20px;
   color: #6ac5b0;
@@ -290,40 +271,90 @@ li {
   font-size: 2em;
   margin: auto; }
 
-/* line 299, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 316, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .skills h4 {
-  color: #6ac5b0;
   margin: 0; }
 
-/* line 303, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* Modal */
+/* line 321, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.modal {
+  display: none;
+  position: fixed;
+  font-family: "Questrial", sans serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8); }
+
+/* line 332, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.modal:target {
+  display: block; }
+
+/* line 335, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.modal-content {
+  width: 70%;
+  max-width: 700px;
+  position: relative;
+  margin: 10% auto;
+  border-radius: none;
+  background: #fff; }
+
+/* line 343, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.modal-body {
+  padding: 2%; }
+  /* line 345, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  .modal-body img {
+    width: 100%;
+    text-align: center; }
+
+/* line 350, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+.modal-title {
+  padding: 0 2%; }
+  /* line 352, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  .modal-title h4, .modal-title button {
+    display: inline; }
+  /* line 355, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  .modal-title button {
+    text-transform: lowercase;
+    font-size: 1rem;
+    padding-top: 1%;
+    background: none;
+    color: #6ac5b0; }
+    /* line 361, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+    .modal-title button:hover {
+      background: none; }
+
+/* PORTFOLIO ================================================================*/
+/* line 369, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 #portfolio {
   min-height: 100vh;
   padding-top: 2.5em;
   background: #6ac5b0;
   color: #fff; }
 
-/* line 310, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 376, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 ul.flex {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 0; }
 
-/* line 316, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 382, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 li.portfolio-item {
   width: 95%;
   display: inline-block;
   padding-bottom: 2%;
   text-align: center; }
 
-/* line 323, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 389, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 .portfolio-img {
   border-radius: 0.25em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-filter: grayscale(100%);
   /* Chrome, Safari, Opera */
   filter: grayscale(100%); }
-  /* line 326, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 392, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   .portfolio-img:hover {
     -webkit-filter: none;
     /* Chrome, Safari, Opera */
@@ -331,12 +362,12 @@ li.portfolio-item {
 
 /* tablet */
 @media (min-width: 768px) {
-  /* line 333, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 399, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   ul.flex {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between; }
-  /* line 338, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 404, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   li.portfolio-item {
     width: 45%;
     display: inline-block;
@@ -345,49 +376,52 @@ li.portfolio-item {
 
 /* desktop */
 @media (min-width: 1024px) {
-  /* line 348, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 414, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   ul.flex {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     width: 80%;
     margin: auto; }
-  /* line 355, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 421, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   li.portfolio-item {
     width: 30%;
     display: inline-block;
     padding-bottom: 2%;
     text-align: center; } }
 
-/* line 364, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 429, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 #contact {
   height: 100vh;
   padding-top: 2.5em;
   background: #fff;
   color: #6ac5b0; }
 
-/* contact form */
-/* line 372, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* CONTACT ==================================================================*/
+/* line 437, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 label {
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  font-family: "Share Tech Mono", monospace;
+  text-transform: lowercase; }
 
 @media screen and (max-width: 1024px) {
-  /* line 376, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+  /* line 443, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
   label {
     font-size: 1.5rem; } }
 
-/* line 380, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 447, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 button {
   padding: 1.5em 0;
   background-color: #6ac5b0;
-  color: #fff; }
+  color: #fff;
+  text-transform: uppercase; }
 
-/* line 386, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 453, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 button:hover {
   background-color: rgba(106, 197, 176, 0.9);
   color: #eee !important; }
 
-/* line 390, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 457, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 input:focus {
   background-color: rgba(106, 197, 176, 0.6);
   outline: none !important;
@@ -395,7 +429,7 @@ input:focus {
   border: none !important;
   color: #fff; }
 
-/* line 397, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 464, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 textarea:focus {
   background-color: rgba(106, 197, 176, 0.6);
   outline: none !important;
@@ -403,7 +437,7 @@ textarea:focus {
   border: none !important;
   color: #fff; }
 
-/* line 404, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
+/* line 471, W:/sites/v-smith/wp-content/themes/coder-portfolio/style.scss */
 #footer p {
   padding: 0.25em;
   margin-bottom: 0;
