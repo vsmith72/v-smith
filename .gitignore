@@ -5,6 +5,10 @@ wp-content/upgrade/*
 wp-content/uploads/*
 sitemap.*
 wp-config.php
+wp-config-sample.php
+Capture.PNG
+license.txt
+readme.html
 
 # Hidden system files
 *.DS_Store
