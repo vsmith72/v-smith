@@ -30,7 +30,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="https://codepen.io/vsmith72" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
                             <li><a href="https://github.com/vsmith72" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/vsmith1972" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/VMarieSmith" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         </ul>
 				    </div>
 			   </div>

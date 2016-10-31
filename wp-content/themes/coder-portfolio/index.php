@@ -56,7 +56,7 @@ get_header(); ?>
                             <p>
                                 <?php echo $about_the_person; ?>
                             </p>
-                            <p class="footnote clearfix">"Not all who wander are lost" -JRR Tolken</p>
+                            <p class="footnote clearfix">"Not all who wander are lost" -JRR Tolkien</p>
                             <div class="skills">
                                 <header class="skills-header clearfix">
                                     <h3>My Skillset and How I Roll!</h3>
