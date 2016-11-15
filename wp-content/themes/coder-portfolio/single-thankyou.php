@@ -15,6 +15,6 @@
 get_header(); ?>
 
 <header class="hero-area scroll" id="hero-area">
-    <p class="type anim-typewriter">Thank you...I'll be in touch soon...redirecting to home page...</p>
+    <p class="type anim-typewriter">Thank you...I'll be in touch soon</p>
 </header>
 <?php get_footer(); ?>
