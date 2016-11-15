@@ -125,7 +125,7 @@ get_header(); ?>
                 <p>
                     Contact Vanessa below, whether you want to hire her, inquire about her experience, or simply invite her to lunch (No, seriously. Invite her to lunch!)
                 </p>
-                <form action="http://vanessa-smith.com/codecamp/contact.php" name="contactform" method="post" role="form">
+                <form action="http://vanessa-smith.com/contac-form-handler.php" name="contactform" method="post" role="form">
                     <div class="form-group">
                         <label for="usr">Name:</label>
                         <input type="text" name="name" class="form-control" id="usr" placeholder="Your name" autocomplete="off">
